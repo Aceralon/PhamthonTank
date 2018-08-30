@@ -14,7 +14,9 @@ def main(argv):
 
     a = 255.0 + image_black - image_white
     g = 255.0 / a * image_black
-    g[g == np.inf] = 255
+    g[g == np.inf] = 255.0
+    g.clip(0, 255)
+    a.clip(0, 255)
 
     a = np.round(a, 0).astype("ubyte")
     g = np.round(g, 0).astype("ubyte")
