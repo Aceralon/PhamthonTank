@@ -8,8 +8,8 @@ def main(argv):
         print("Error")
         pass
 
-    image_black = np.array(Image.open(argv[2]).convert("L"))
     image_white = np.array(Image.open(argv[1]).convert("L"))
+    image_black = np.array(Image.open(argv[2]).convert("L"))
     image_black = image_black * 0.3
 
     a = 255.0 + image_black - image_white
